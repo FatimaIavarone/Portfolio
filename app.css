@@ -1,0 +1,118 @@
+:root{
+    --transition-base: all 500ms ease 0s;
+}
+
+/********************************** LAYOUT ELEMENTS */
+body{
+    padding-top: 56px;
+}
+#hide_nav{
+    transition: var(--transition-base);
+}
+#hide_nav.off-page{
+    transform: translateY(-100%);
+}
+#footer_main{
+    margin-bottom: 52px;
+    margin-top: 66px;
+}
+#go_top{
+    position: fixed;
+    z-index: 1030;
+    bottom:0.5rem;
+    right: 0;
+    transform: translateY(50px);
+    transition: var(--transition-base);
+}
+#go_top.on-page{
+    transform: none;
+}
+
+/********************************* background object-fit */
+.bg-of{
+    position: relative;
+}
+.bg-of *:not(.sfondo){
+    position: relative;
+    z-index: 1;
+}
+.bg-of .sfondo{
+    position:absolute;
+    z-index:0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width:100%;
+}
+.bg-of .sfondo img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/***************************** #swiper_hero */
+#swiper_hero {
+    height: 80vh;
+  }
+#swiper_hero .swiper-button-next, #swiper_hero .swiper-button-prev{
+    color: #FFFFFF;
+}
+
+/********************************** .top-list */
+.top-list {
+    counter-reset: top_list_counter;
+}
+.top-list a > div{
+    padding: .75rem;
+    border-radius: .5rem;
+    transition: var(--transition-base);
+}
+.top-list a:hover > div{
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
+.top-list a > div > p{
+    width: 1.5rem;
+    margin-right: .5rem;
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+.top-list a > div > p:before{
+    counter-increment: top_list_counter;
+    content: counter(top_list_counter);
+}
+.top-list a img{
+    margin-right: .75rem; 
+}
+.top-list a div div p:first-child{
+    font-weight: 600;
+    font-size: 1.25rem;margin-bottom: 0;
+}
+
+/***************************** #swiper_top_artists */
+#swiper_top_artists a div{
+    aspect-ratio: 0.7;
+    margin-bottom: 1rem; 
+}
+#swiper_top_artists a div img{
+    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    transition: var(--transition-base);
+}
+#swiper_top_artists a:hover div img{
+    transform: scale(.9);
+}
+#swiper_top_artists .swiper-pagination-bullets{
+    
+}
+
+/***************************** #new_arrivals */
+#new_arrivals a div img{
+    transition: var(--transition-base);
+} 
+#new_arrivals a:hover div img{
+    transform: rotate(5deg) scale(1.2);
+} 

@@ -1,0 +1,41 @@
+#bs5-breakpoints{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1031;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+#bs5-breakpoints:after{
+    content: "M";
+}
+@media screen and (min-width: 576px){
+    #bs5-breakpoints:after{
+        content: "sm";
+    }
+}
+@media screen and (min-width: 768px){
+    #bs5-breakpoints:after{
+        content: "md";
+    }
+}
+@media screen and (min-width: 992px){
+    #bs5-breakpoints:after{
+        content: "lg";
+    }
+}
+@media screen and (min-width: 1200px){
+    #bs5-breakpoints:after{
+        content: "xl";
+    }
+}
+@media screen and (min-width: 1400px){
+    #bs5-breakpoints:after{
+        content: "xxl";
+    }
+}
